@@ -6,16 +6,31 @@ The frontend offers a clean UI with search, filtering, and charts.
 
 ---
 
-## Features
-- 📜 **View Logs** in reverse chronological order.
-- 🔍 **Full-text Search** on log messages (case-insensitive).
-- ⚠ **Level Filtering** (`error`, `warning`, `info`) with color-coded entries.
-- ⏳ **Date Range Filtering** to view logs for a specific time frame.
-- 🖥 **Resource ID Filtering** for specific services or instances.
-- 🧮 **Combine Multiple Filters** at once.
-- 📊 **Dashboard Chart** for log counts by level.
-- 🔄 **Real-time Updates** using WebSockets.
-- 🐳 **Dockerized** for easy deployment.
+### 🔍 Log Query & Filtering
+- View logs in reverse-chronological order (most recent first).
+- Case-insensitive full-text search on the `message` field.
+- Filter logs by:
+  - **Level** (`error`, `info`, `warning`)
+  - **Resource ID**
+  - **Timestamp range** (start & end date/time)
+- Combine multiple filters for highly specific searches.
+- Dynamic updates when filters are changed.
+
+### ⚡ Real-time WebSocket Updates
+- Uses **Socket.IO** to push new logs from the backend to the frontend instantly.
+- Clients receive new logs without needing to refresh or manually fetch data.
+- Supports **real-time filtered queries**:
+  - Example: The frontend sends `{ search: "database", levels: ["error"], startDate: "2025-08-10T00:00:00Z" }`
+  - The backend processes filters on the server and streams only matching logs back.
+
+### 📊 Dashboard Visualization
+- A modal-based dashboard displays a **chart** of logs grouped by level.
+- Uses **Recharts** to show log counts for each level (`error`, `warning`, `info`).
+- Colors are dynamically assigned:
+  - **Error** → Red
+  - **Warning** → Yellow
+  - **Info** → Blue
+- Chart automatically respects the **currently applied filters**.
 
 ---
 
@@ -30,3 +45,4 @@ The frontend offers a clean UI with search, filtering, and charts.
 📞 **Phone:** +91 9599784204  
 📧 **Email:** [shashank.jaitly.98@gmail.com](mailto:shashank.jaitly.98@gmail.com)  
 🌐 **Website:** [https://developedbydude.web.app/](https://developedbydude.web.app/)
+
