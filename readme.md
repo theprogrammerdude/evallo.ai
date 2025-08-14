@@ -10,7 +10,7 @@ The frontend offers a clean UI with search, filtering, and charts.
 - View logs in reverse-chronological order (most recent first).
 - Case-insensitive full-text search on the `message` field.
 - Filter logs by:
-  - **Level** (`error`, `info`, `warning`)
+  - **Level** (`error`, `info`, `warning`, `debug`)
   - **Resource ID**
   - **Timestamp range** (start & end date/time)
 - Combine multiple filters for highly specific searches.
@@ -30,6 +30,7 @@ The frontend offers a clean UI with search, filtering, and charts.
   - **Error** → Red
   - **Warning** → Yellow
   - **Info** → Blue
+  - **Debug** → Gray
 - Chart automatically respects the **currently applied filters**.
 
 ---

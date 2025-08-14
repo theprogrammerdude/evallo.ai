@@ -26,7 +26,7 @@ const DashboardModal = ({ isOpen, onClose, logs }) => {
     error: "#ef4444", // red
     warning: "#f59e0b", // yellow
     info: "#3b82f6", // blue
-    default: "#6b7280", // gray
+    debug: "#6b7280", // gray
   };
 
   return (
